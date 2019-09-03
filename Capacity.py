@@ -13,14 +13,14 @@ class Capacity:
         
         #liste de toutes les parties de S
         self.subsets = [{}]
-           for x in list(range(1:N)):
+        for x in list(range(1:N)):
             # for every additional element in our set
             # the power set consists of the subsets that don't
            # contain this element (just take the previous power set)
             # plus the subsets that do contain the element (use list
             # comprehension to add [x] onto everything in the
             # previous power set)
-            self.subsets.extend({subset + {x} for subset in result})
+        self.subsets.extend({subset + {x} for subset in result})
 
 
         #Capacité elle même
