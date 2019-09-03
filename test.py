@@ -14,5 +14,5 @@ t = CapacitySet.CapacitySet({frozenset(): 0, frozenset({'3', '2', '4', '1'}): 1,
 
 
 for i in range(2**t.N):
-       printf(t.subsets)
+       print(f'a={t.subsets(i):s}, b={t.mu(t.subsets(i)):d}')
 
