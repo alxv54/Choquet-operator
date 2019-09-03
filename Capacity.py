@@ -1,13 +1,30 @@
 import itertools
 import operator
+import nump
 
 
 class Capacity:
+#Class representing a capacity, i.e. a monotone set function vanishing at the empty set (also called
+#fuzzy measure, non-additive measure, monotone measure).
+ 
+    def __init__(self, capacity_set):  #création d'un objet Capacity
+        #Cardinalité de l'ensemble, S, sur le quel est définie la capacité
+        self.N = log(len(capacity_set),2)
+        
+        #liste de toutes les parties de S
+        self.subsets = [{}]
+           for x in list(range(1:N)):
+            # for every additional element in our set
+            # the power set consists of the subsets that don't
+           # contain this element (just take the previous power set)
+            # plus the subsets that do contain the element (use list
+            # comprehension to add [x] onto everything in the
+            # previous power set)
+            self.subsets.extend({subset + {x} for subset in result})
 
-    def __init__(self, capacity_set):
-        #création'un objet intégrale de Choquet
-        self.criteres = capacity_set.criteres
-        self.mu = capacity_set.mu
+
+        #Capacité elle même
+        self.mu = capacity_set
 
     def get_criteres_trie_par_valeur(self):
         self.criteres_keys_trie_par_valeur = []
